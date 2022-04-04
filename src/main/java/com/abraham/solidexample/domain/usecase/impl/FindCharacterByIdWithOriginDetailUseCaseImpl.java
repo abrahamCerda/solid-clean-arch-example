@@ -2,9 +2,9 @@ package com.abraham.solidexample.domain.usecase.impl;
 
 import com.abraham.solidexample.domain.entity.CharacterEntity;
 import com.abraham.solidexample.domain.entity.LocationEntity;
-import com.abraham.solidexample.domain.usecase.FindCharacterByIdWithOriginDetailUseCase;
-import com.abraham.solidexample.infrastructure.gateway.FindCharacterByIdGateway;
-import com.abraham.solidexample.infrastructure.gateway.FindLocationByIdGateway;
+import com.abraham.solidexample.domain.port.input.FindCharacterByIdWithOriginDetailUseCase;
+import com.abraham.solidexample.domain.port.output.FindCharacterByIdGateway;
+import com.abraham.solidexample.domain.port.output.FindLocationByIdGateway;
 
 public class FindCharacterByIdWithOriginDetailUseCaseImpl implements FindCharacterByIdWithOriginDetailUseCase {
 

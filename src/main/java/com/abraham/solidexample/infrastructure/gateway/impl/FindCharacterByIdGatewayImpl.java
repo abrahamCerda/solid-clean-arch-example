@@ -4,7 +4,7 @@ import com.abraham.solidexample.domain.entity.CharacterEntity;
 import com.abraham.solidexample.domain.entity.builder.CharacterBuilder;
 import com.abraham.solidexample.infrastructure.client.HttpClient;
 import com.abraham.solidexample.infrastructure.gateway.dto.CharacterDTO;
-import com.abraham.solidexample.infrastructure.gateway.FindCharacterByIdGateway;
+import com.abraham.solidexample.domain.port.output.FindCharacterByIdGateway;
 import org.assertj.core.util.VisibleForTesting;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

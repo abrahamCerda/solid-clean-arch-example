@@ -1,13 +1,13 @@
 package com.abraham.solidexample.infrastructure.config;
 
-import com.abraham.solidexample.domain.usecase.FindCharacterByIdUseCase;
-import com.abraham.solidexample.domain.usecase.FindCharacterByIdWithOriginDetailUseCase;
-import com.abraham.solidexample.domain.usecase.FindLocationByIdUseCase;
+import com.abraham.solidexample.domain.port.input.FindCharacterByIdUseCase;
+import com.abraham.solidexample.domain.port.input.FindCharacterByIdWithOriginDetailUseCase;
+import com.abraham.solidexample.domain.port.input.FindLocationByIdUseCase;
 import com.abraham.solidexample.domain.usecase.impl.FindCharacterByIdUseCaseImpl;
 import com.abraham.solidexample.domain.usecase.impl.FindCharacterByIdWithOriginDetailUseCaseImpl;
 import com.abraham.solidexample.domain.usecase.impl.FindLocationByIdUseCaseImpl;
-import com.abraham.solidexample.infrastructure.gateway.FindCharacterByIdGateway;
-import com.abraham.solidexample.infrastructure.gateway.FindLocationByIdGateway;
+import com.abraham.solidexample.domain.port.output.FindCharacterByIdGateway;
+import com.abraham.solidexample.domain.port.output.FindLocationByIdGateway;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

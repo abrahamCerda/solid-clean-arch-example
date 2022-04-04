@@ -1,4 +1,4 @@
-package com.abraham.solidexample.domain.usecase;
+package com.abraham.solidexample.domain.port.input;
 
 import com.abraham.solidexample.domain.entity.CharacterEntity;
 

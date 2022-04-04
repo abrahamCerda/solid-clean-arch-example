@@ -1,8 +1,8 @@
 package com.abraham.solidexample.domain.usecase.impl;
 
 import com.abraham.solidexample.domain.entity.LocationEntity;
-import com.abraham.solidexample.infrastructure.gateway.FindLocationByIdGateway;
-import com.abraham.solidexample.domain.usecase.FindLocationByIdUseCase;
+import com.abraham.solidexample.domain.port.output.FindLocationByIdGateway;
+import com.abraham.solidexample.domain.port.input.FindLocationByIdUseCase;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

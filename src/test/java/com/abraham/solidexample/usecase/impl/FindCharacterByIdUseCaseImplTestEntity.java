@@ -3,7 +3,7 @@ package com.abraham.solidexample.usecase.impl;
 import com.abraham.solidexample.infrastructure.gateway.dto.CharacterDTO;
 import com.abraham.solidexample.domain.entity.CharacterEntity;
 import com.abraham.solidexample.domain.usecase.impl.FindCharacterByIdUseCaseImpl;
-import com.abraham.solidexample.infrastructure.gateway.FindCharacterByIdGateway;
+import com.abraham.solidexample.domain.port.output.FindCharacterByIdGateway;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

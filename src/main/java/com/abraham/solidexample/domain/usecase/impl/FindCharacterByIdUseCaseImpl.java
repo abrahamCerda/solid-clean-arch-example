@@ -1,8 +1,8 @@
 package com.abraham.solidexample.domain.usecase.impl;
 
 import com.abraham.solidexample.domain.entity.CharacterEntity;
-import com.abraham.solidexample.infrastructure.gateway.FindCharacterByIdGateway;
-import com.abraham.solidexample.domain.usecase.FindCharacterByIdUseCase;
+import com.abraham.solidexample.domain.port.output.FindCharacterByIdGateway;
+import com.abraham.solidexample.domain.port.input.FindCharacterByIdUseCase;
 
 public class FindCharacterByIdUseCaseImpl implements FindCharacterByIdUseCase {
 

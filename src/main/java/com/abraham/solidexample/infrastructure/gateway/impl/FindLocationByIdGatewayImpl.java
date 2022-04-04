@@ -4,7 +4,7 @@ import com.abraham.solidexample.domain.entity.LocationEntity;
 import com.abraham.solidexample.domain.entity.builder.LocationBuilder;
 import com.abraham.solidexample.infrastructure.client.HttpClient;
 import com.abraham.solidexample.infrastructure.gateway.dto.LocationDTO;
-import com.abraham.solidexample.infrastructure.gateway.FindLocationByIdGateway;
+import com.abraham.solidexample.domain.port.output.FindLocationByIdGateway;
 import org.assertj.core.util.VisibleForTesting;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

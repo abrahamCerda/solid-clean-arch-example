@@ -1,4 +1,4 @@
-package com.abraham.solidexample.infrastructure.gateway;
+package com.abraham.solidexample.domain.port.output;
 
 import com.abraham.solidexample.domain.entity.CharacterEntity;
 
