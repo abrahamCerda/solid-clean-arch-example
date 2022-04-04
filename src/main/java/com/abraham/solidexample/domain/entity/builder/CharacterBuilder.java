@@ -1,6 +1,6 @@
 package com.abraham.solidexample.domain.entity.builder;
 
-import com.abraham.solidexample.domain.dto.CharacterDTO;
+import com.abraham.solidexample.infrastructure.gateway.dto.CharacterDTO;
 import com.abraham.solidexample.domain.entity.Character;
 
 public class CharacterBuilder {

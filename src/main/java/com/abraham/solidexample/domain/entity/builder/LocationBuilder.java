@@ -1,6 +1,6 @@
 package com.abraham.solidexample.domain.entity.builder;
 
-import com.abraham.solidexample.domain.dto.LocationDTO;
+import com.abraham.solidexample.infrastructure.gateway.dto.LocationDTO;
 import com.abraham.solidexample.domain.entity.Location;
 
 public class LocationBuilder {
