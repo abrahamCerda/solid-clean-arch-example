@@ -1,25 +1,25 @@
 package com.abraham.solidexample.infrastructure.controller.v1.vo.builder;
 
-import com.abraham.solidexample.domain.entity.Location;
+import com.abraham.solidexample.domain.entity.LocationEntity;
 import com.abraham.solidexample.infrastructure.controller.v1.vo.LocationVO;
 
 public class LocationVOBuilder {
-    private Location location;
+    private LocationEntity locationEntity;
 
-    public LocationVOBuilder withLocationDTO(Location location){
-        this.location = location;
+    public LocationVOBuilder withLocationDTO(LocationEntity locationEntity){
+        this.locationEntity = locationEntity;
         return this;
     }
 
     public LocationVO build(){
-        if(location == null){
+        if(locationEntity == null){
             return null;
         }
         LocationVO locationVO = new LocationVO();
-        locationVO.setName(this.location.getName());
-        locationVO.setUrl(this.location.getUrl());
-        locationVO.setDimension(this.location.getDimension());
-        locationVO.setResidents(this.location.getResidents());
+        locationVO.setName(this.locationEntity.getName());
+        locationVO.setUrl(this.locationEntity.getUrl());
+        locationVO.setDimension(this.locationEntity.getDimension());
+        locationVO.setResidents(this.locationEntity.getResidents());
         return locationVO;
     }
 }

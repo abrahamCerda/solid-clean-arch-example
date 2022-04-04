@@ -14,11 +14,4 @@ public class SolidExampleApplication {
 		SpringApplication.run(SolidExampleApplication.class, args);
 	}
 
-	@Bean
-	public WebClient getWebClient(){
-		return WebClient.builder()
-				.defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
-				.build();
-	}
-
 }

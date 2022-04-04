@@ -1,7 +1,7 @@
 package com.abraham.solidexample.domain.entity.builder;
 
 import com.abraham.solidexample.infrastructure.gateway.dto.CharacterDTO;
-import com.abraham.solidexample.domain.entity.Character;
+import com.abraham.solidexample.domain.entity.CharacterEntity;
 
 public class CharacterBuilder {
 
@@ -12,27 +12,27 @@ public class CharacterBuilder {
         return this;
     }
 
-    public Character build(){
+    public CharacterEntity build(){
         if(this.characterDTO == null){
             return null;
         }
-        Character character = new Character();
-        character.setId(this.characterDTO.getId());
-        character.setName(this.characterDTO.getName());
-        character.setEpisodes(this.characterDTO.getEpisodes());
-        character.setOrigin(new LocationBuilder()
+        CharacterEntity characterEntity = new CharacterEntity();
+        characterEntity.setId(this.characterDTO.getId());
+        characterEntity.setName(this.characterDTO.getName());
+        characterEntity.setEpisodes(this.characterDTO.getEpisodes());
+        characterEntity.setOrigin(new LocationBuilder()
                 .withLocationDTO(this.characterDTO.getOrigin())
                 .build());
-        character.setGender(this.characterDTO.getGender());
-        character.setImageUrl(this.characterDTO.getImageUrl());
-        character.setLocation(new LocationBuilder()
+        characterEntity.setGender(this.characterDTO.getGender());
+        characterEntity.setImageUrl(this.characterDTO.getImageUrl());
+        characterEntity.setLocation(new LocationBuilder()
                 .withLocationDTO(this.characterDTO.getLocation())
                 .build());
-        character.setSpecies(this.characterDTO.getSpecies());
-        character.setUrl(this.characterDTO.getUrl());
-        character.setStatus(this.characterDTO.getStatus());
-        character.setCreated(this.characterDTO.getCreated());
-        character.setType(this.characterDTO.getType());
-        return character;
+        characterEntity.setSpecies(this.characterDTO.getSpecies());
+        characterEntity.setUrl(this.characterDTO.getUrl());
+        characterEntity.setStatus(this.characterDTO.getStatus());
+        characterEntity.setCreated(this.characterDTO.getCreated());
+        characterEntity.setType(this.characterDTO.getType());
+        return characterEntity;
     }
 }

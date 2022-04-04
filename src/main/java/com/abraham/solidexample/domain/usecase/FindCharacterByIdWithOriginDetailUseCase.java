@@ -1,7 +1,7 @@
 package com.abraham.solidexample.domain.usecase;
 
-import com.abraham.solidexample.domain.entity.Character;
+import com.abraham.solidexample.domain.entity.CharacterEntity;
 
 public interface FindCharacterByIdWithOriginDetailUseCase {
-    Character execute(Integer id);
+    CharacterEntity execute(Integer id);
 }

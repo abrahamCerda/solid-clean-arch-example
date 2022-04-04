@@ -3,7 +3,7 @@ package com.abraham.solidexample.domain.entity;
 import java.util.Date;
 import java.util.List;
 
-public class Location {
+public class LocationEntity {
     private Integer id;
     private String name;
     private String type;

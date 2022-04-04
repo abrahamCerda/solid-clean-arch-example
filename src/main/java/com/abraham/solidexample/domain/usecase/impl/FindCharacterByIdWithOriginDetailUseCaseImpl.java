@@ -1,39 +1,34 @@
 package com.abraham.solidexample.domain.usecase.impl;
 
-import com.abraham.solidexample.domain.entity.Location;
-import com.abraham.solidexample.domain.entity.Character;
-import com.abraham.solidexample.domain.usecase.FindCharacterByIdUseCase;
+import com.abraham.solidexample.domain.entity.CharacterEntity;
+import com.abraham.solidexample.domain.entity.LocationEntity;
 import com.abraham.solidexample.domain.usecase.FindCharacterByIdWithOriginDetailUseCase;
-import com.abraham.solidexample.domain.usecase.FindLocationByIdUseCase;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import com.abraham.solidexample.infrastructure.gateway.FindCharacterByIdGateway;
+import com.abraham.solidexample.infrastructure.gateway.FindLocationByIdGateway;
 
-@Service
 public class FindCharacterByIdWithOriginDetailUseCaseImpl implements FindCharacterByIdWithOriginDetailUseCase {
 
+    private final FindCharacterByIdGateway findCharacterByIdGateway;
+    private final FindLocationByIdGateway findLocationByIdGateway;
 
-    private final FindCharacterByIdUseCase findCharacterByIdUseCase;
-    private final FindLocationByIdUseCase findLocationByIdUseCase;
-
-    @Autowired
-    public FindCharacterByIdWithOriginDetailUseCaseImpl(FindCharacterByIdUseCase findCharacterByIdUseCase,
-                                                        FindLocationByIdUseCase findLocationByIdUseCase) {
-        this.findCharacterByIdUseCase = findCharacterByIdUseCase;
-        this.findLocationByIdUseCase = findLocationByIdUseCase;
+    public FindCharacterByIdWithOriginDetailUseCaseImpl(FindCharacterByIdGateway findCharacterByIdGateway,
+                                                        FindLocationByIdGateway findLocationByIdGateway) {
+        this.findCharacterByIdGateway = findCharacterByIdGateway;
+        this.findLocationByIdGateway = findLocationByIdGateway;
     }
 
     @Override
-    public Character execute(Integer id) {
-        Character character = this.findCharacterByIdUseCase.execute(id);
-        Location origin = character.getOrigin();
+    public CharacterEntity execute(Integer id) {
+        CharacterEntity characterEntity = this.findCharacterByIdGateway.execute(id);
+        LocationEntity origin = characterEntity.getOrigin();
         if(origin != null && origin.getUrl() != null  && !origin.getUrl().isEmpty()){
             String[] urlParts = origin.getUrl().trim().split("/");
             int originLocationId = Integer.parseInt(urlParts[urlParts.length -1 ]);
             if(originLocationId >= 0){
-                Location originFullLocation = this.findLocationByIdUseCase.execute(originLocationId);
-                character.setOrigin(originFullLocation);
+                LocationEntity originFullLocationEntity = this.findLocationByIdGateway.execute(originLocationId);
+                characterEntity.setOrigin(originFullLocationEntity);
             }
         }
-        return character;
+        return characterEntity;
     }
 }

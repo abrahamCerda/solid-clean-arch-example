@@ -1,7 +1,7 @@
 package com.abraham.solidexample.domain.entity.builder;
 
 import com.abraham.solidexample.infrastructure.gateway.dto.LocationDTO;
-import com.abraham.solidexample.domain.entity.Location;
+import com.abraham.solidexample.domain.entity.LocationEntity;
 
 public class LocationBuilder {
 
@@ -12,18 +12,18 @@ public class LocationBuilder {
         return this;
     }
 
-    public Location build(){
+    public LocationEntity build(){
         if(locationDTO == null){
             return null;
         }
-        Location location = new Location();
-        location.setId(this.locationDTO.getId());
-        location.setName(this.locationDTO.getName());
-        location.setDimension(this.locationDTO.getDimension());
-        location.setResidents(this.locationDTO.getResidents());
-        location.setCreated(this.locationDTO.getCreated());
-        location.setUrl(this.locationDTO.getUrl());
-        location.setType(this.locationDTO.getType());
-        return location;
+        LocationEntity locationEntity = new LocationEntity();
+        locationEntity.setId(this.locationDTO.getId());
+        locationEntity.setName(this.locationDTO.getName());
+        locationEntity.setDimension(this.locationDTO.getDimension());
+        locationEntity.setResidents(this.locationDTO.getResidents());
+        locationEntity.setCreated(this.locationDTO.getCreated());
+        locationEntity.setUrl(this.locationDTO.getUrl());
+        locationEntity.setType(this.locationDTO.getType());
+        return locationEntity;
     }
 }

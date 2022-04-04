@@ -1,7 +1,7 @@
-package com.abraham.solidexample.domain.usecase;
+package com.abraham.solidexample.infrastructure.gateway;
 
 import com.abraham.solidexample.domain.entity.CharacterEntity;
 
-public interface FindCharacterByIdUseCase {
+public interface FindCharacterByIdGateway {
     CharacterEntity execute(Integer id);
 }

@@ -3,15 +3,15 @@ package com.abraham.solidexample.domain.entity;
 import java.util.Date;
 import java.util.List;
 
-public class Character {
+public class CharacterEntity {
     private Integer id;
     private String name;
     private String status;
     private String species;
     private String type;
     private String gender;
-    private Location origin;
-    private Location location;
+    private LocationEntity origin;
+    private LocationEntity locationEntity;
     private String imageUrl;
     private List<String> episodes;
     private String url;
@@ -65,20 +65,20 @@ public class Character {
         this.gender = gender;
     }
 
-    public Location getOrigin() {
+    public LocationEntity getOrigin() {
         return origin;
     }
 
-    public void setOrigin(Location origin) {
+    public void setOrigin(LocationEntity origin) {
         this.origin = origin;
     }
 
-    public Location getLocation() {
-        return location;
+    public LocationEntity getLocation() {
+        return locationEntity;
     }
 
-    public void setLocation(Location location) {
-        this.location = location;
+    public void setLocation(LocationEntity locationEntity) {
+        this.locationEntity = locationEntity;
     }
 
     public String getImageUrl() {

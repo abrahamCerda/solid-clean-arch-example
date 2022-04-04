@@ -1,6 +1,6 @@
 package com.abraham.solidexample.infrastructure.controller.v1;
 
-import com.abraham.solidexample.domain.entity.Character;
+import com.abraham.solidexample.domain.entity.CharacterEntity;
 import com.abraham.solidexample.infrastructure.controller.v1.vo.CharacterVO;
 import com.abraham.solidexample.infrastructure.controller.v1.vo.builder.CharacterVOBuilder;
 import com.abraham.solidexample.domain.usecase.FindCharacterByIdWithOriginDetailUseCase;
@@ -12,20 +12,20 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("v1/character")
-public class CharacterResource {
+public class CharacterController {
 
     private final FindCharacterByIdWithOriginDetailUseCase findCharacterByIdWithOriginDetailUseCase;
 
     @Autowired
-    public CharacterResource(FindCharacterByIdWithOriginDetailUseCase findCharacterByIdWithOriginDetailUseCase) {
+    public CharacterController(FindCharacterByIdWithOriginDetailUseCase findCharacterByIdWithOriginDetailUseCase) {
         this.findCharacterByIdWithOriginDetailUseCase = findCharacterByIdWithOriginDetailUseCase;
     }
 
     @GetMapping("/{id}")
     public CharacterVO getCharacterById(@PathVariable("id") Integer id){
-        Character character = this.findCharacterByIdWithOriginDetailUseCase.execute(id);
+        CharacterEntity characterEntity = this.findCharacterByIdWithOriginDetailUseCase.execute(id);
         return new CharacterVOBuilder()
-                .withCharacter(character)
+                .withCharacter(characterEntity)
                 .build();
     }
 }
