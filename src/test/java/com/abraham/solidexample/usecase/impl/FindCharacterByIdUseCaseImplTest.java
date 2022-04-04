@@ -18,7 +18,7 @@ import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
 @RunWith(JUnitPlatform.class)
-class FindCharacterByIdUseCaseImplTestEntity {
+class FindCharacterByIdUseCaseImplTest {
 
     @Mock
     private FindCharacterByIdGateway findCharacterByIdGateway;
@@ -30,14 +30,11 @@ class FindCharacterByIdUseCaseImplTestEntity {
     @Test
     public void should_find_character_when_id_is_not_zero(){
         Integer testId = 1;
-        CharacterDTO characterDTO = mock(CharacterDTO.class);
         CharacterEntity characterEntity = mock(CharacterEntity.class);
         doReturn(testId).when(characterEntity).getId();
-        doReturn(characterDTO).when(this.findCharacterByIdGateway).execute(testId);
-        doReturn(characterEntity).when(this.findSingleCharacterUseCase).buildCharacter(characterDTO);
+        doReturn(characterEntity).when(this.findCharacterByIdGateway).execute(testId);
         CharacterEntity resultCharacterEntity = this.findSingleCharacterUseCase.execute(testId);
         verify(this.findCharacterByIdGateway, times(1)).execute(testId);
-        verify(this.findSingleCharacterUseCase, times(1)).buildCharacter(characterDTO);
         Assertions.assertEquals(testId, resultCharacterEntity.getId());
     }
 

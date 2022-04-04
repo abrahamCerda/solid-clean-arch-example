@@ -14,7 +14,7 @@
 	<name>solid-example</name>
 	<description>Example project to apply the SOLID principles</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>8</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
